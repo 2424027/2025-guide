@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>初めての紅茶ガイド - 選び方</title>
+  <link rel="stylesheet" href="choice.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="img/カップ２.png" alt="ロゴ" />
+    </a>
+
+    <div class="menu-button" id="menuToggle">
+      <img src="img/ボタン.png" alt="メニューボタン" />
+      <nav class="submenu" id="submenu">
+        <a href="history.html">歴史と文化</a>
+        <a href="choice.html">選び方</a>
+        <a href="types.html">種類</a>
+        <a href="enjoy.html">楽しみ方</a>
+        <a href="effect.html">効果</a>
+        <a href="recipe.html">レシピ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h3>選び方</h3>
+      <p>
+        紅茶は、香りや味わいだけでなく、気分やライフスタイルに寄り添って選ぶことで、より豊かな時間を演出してくれます。こちらでは、紅茶の選び方を4つの観点から丁寧にご紹介いたします。
+      </p>
+    </section>
+  
+    <section>
+      <h3>気分</h3>
+      <p>
+        まず、「気分で選ぶ紅茶」では、一日の始まりやお休み前など、シーンに応じた茶葉の選び方をご提案いたします。たとえば、リラックスしたい夜にはカモミールティーを、集中力を高めたい時にはアールグレイなど、目的に合わせた一杯をお選びいただけます。
+      </p>
+    </section>
+  
+    <section>
+      <h3>食事</h3>
+      <p>
+        次に、「食事に合う紅茶」では、お料理との相性に注目いたします。軽やかな香りのダージリンはサンドイッチやスコーンと、香り高いアールグレイはスイーツとの相性が良く、日々の食卓に紅茶を添えることで、味わいが一層引き立ちます。
+      </p>
+    </section>
+  
+    <section>
+      <h3>カフェイン</h3>
+      <p>
+        「カフェイン量で選ぶ紅茶」では、健康や体調に配慮した紅茶選びをご紹介いたします。朝にはしっかり目覚めを助けるアッサムを、夜にはカフェイン控えめのデカフェやハーブティーを選ぶことで、心と体にやさしいティータイムをお楽しみいただけます。
+      </p>
+    </section>
+  
+    <section>
+      <h3>香り</h3>
+      <p>
+        最後に、「香りで選ぶ紅茶」では、ベルガモットの爽やかさ、花の香り、フルーツの甘みなど、多彩な香りの世界をご堪能いただけます。お気に入りの香りに包まれることで、ひとときの癒やしを感じていただけることでしょう。その日の気分やお好みに合わせて、紅茶選びの時間そのものを、どうぞお楽しみくださいませ。
+      </p>
+    </section>
+  </main>
+  
+
+  <script>
+    // DOM読み込み後にイベント設定
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.getElementById('menuToggle');
+      const submenu = document.getElementById('submenu');
+
+      menuButton.addEventListener('click', () => {
+        submenu.classList.toggle('active');
+      });
+
+      submenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          submenu.classList.remove('active');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

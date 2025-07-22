@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>初めての紅茶ガイド - 楽しみ方</title>
+  <link rel="stylesheet" href="effect.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="img/カップ２.png" alt="ロゴ" />
+    </a>
+
+    <div class="menu-button" id="menuToggle">
+      <img src="img/ボタン.png" alt="メニューボタン" />
+      <nav class="submenu" id="submenu">
+        <a href="history.html">歴史と文化</a>
+        <a href="choice.html">選び方</a>
+        <a href="types.html">種類</a>
+        <a href="enjoy.html">楽しみ方</a>
+        <a href="effect.html">効果</a>
+        <a href="recipe.html">レシピ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h3>効果</h3>
+     </section>
+     
+     <section>
+        <p>紅茶は、香りや味わいだけでなく、心と体に
+            やさしく働きかける自然の贈りものです。 <br>
+            古くから健康に良いとされてきた紅茶には、
+            日々の生活を穏やかに整えるさまざまな効果が秘められています。
+        </p>
+     </section>
+     <section>
+      <p>
+        まず注目したいのは、リラックス効果。 紅茶には「テアニン」という成分が含まれており、これが脳をやさしく落ち着かせ、心の緊張を和らげてくれます。疲れた時や気持ちを整えたいときに、ふっと一息つきながら紅茶を口にすると、不思議と心がほぐれていくのを感じられるでしょう。<br>
+        また、カフェインも適度に含まれており、気分をシャキッとさせたい朝や午後のひとときにもぴったりです。コーヒーよりも穏やかな作用のため、集中したい時や作業のおともにも適しています。
+      </p>
+    </section>
+    <section>
+    <p>
+        さらに、紅茶に含まれるポリフェノール（紅茶フラボノイド）には、抗酸化作用があり、美容やエイジングケアの観点からも注目されています。体内の活性酸素をおだやかに抑え、健康的な体のバランスをサポートしてくれる働きがあります。
+        喉のケアや抗菌作用も、紅茶ならではの特長です。<br>
+         冬の乾燥した季節には、温かい紅茶が喉を潤し、やさしく守ってくれます。外国では風邪予防に紅茶でうがいをする習慣もあるほどです。
+    </p>
+    </section>
+    <section>
+    <p>
+        そして何より、紅茶には「習慣そのもの」が心に作用する力があります。<br>
+        お湯を沸かし、茶葉を蒸らし、香りを楽しみながらカップを手にする。そのひとつひとつの動作が、心を静かに整えてくれます。<br> 
+        一杯の紅茶が、忙しい毎日のなかにそっと“余白”をつくってくれるのです。<br>
+        身体にうれしい効果と、心を和らげる静かな時間。 紅茶は、日々を少しだけ丁寧に過ごしたいと願うあなたに寄り添う、やさしい味方です。
+    </p>
+    </section>
+    </main>
+
+  <script>
+    // DOM読み込み後にイベント設定
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.getElementById('menuToggle');
+      const submenu = document.getElementById('submenu');
+
+      menuButton.addEventListener('click', () => {
+        submenu.classList.toggle('active');
+      });
+
+      submenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          submenu.classList.remove('active');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

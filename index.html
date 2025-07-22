@@ -1,8 +1,106 @@
 <!DOCTYPE html>
 <html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>初めての紅茶ガイド</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">
+      <img src="img/カップ２.png" alt="ロゴ" />
+    </a>
+  
+    <div class="menu-button">
+      <img src="img/ボタン.png" alt="メニューボタン" />
+      <nav class="submenu">
+        <a href="history.html">歴史と文化</a>
+        <a href="choice.html">選び方</a>
+        <a href="types.html">種類</a>
+        <a href="enjoy.html">楽しみ方</a>
+        <a href="effect.html">効果</a>
+        <a href="recipe.html">レシピ</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="intro-box">
+      初めて紅茶に触れる方へ——<br />
+      香り豊かな茶葉と、心落ち着くひとときを楽しむための<br />
+      第一歩として、このガイドをご用意しました。<br />
+      茶葉の選び方や淹れ方など、紅茶の基本をやさしく丁寧に<br />
+      ご紹介いたします。<br />
+      紅茶のある様々な暮らしを、今日から少しずつ<br />
+      始めてみませんか。
+      <img src="img/カップ横.png" alt="カップ画像" class="overlay-cup" />
+    </div>
 
+    <section>
+      <h3>歴史と文化</h3>
+      <p>
+        紅茶は、古代から現代まで世界中で愛されてきた飲み物。文化や歴史を紐解けば、一杯の中に広がる深い物語が見えてきます。
+      </p>
+      <a href="history.html">詳しく見る</a>
+    </section>
 
+    <section>
+      <h3>選び方</h3>
+      <p>
+        香りや味わい、気分や食卓に寄り添う紅茶選びを。心満たされる一杯との出会いを、ぜひお楽しみください。
+      </p>
+      <a href="choice.html">詳しく見る</a>
+    </section>
 
+    <section>
+      <h3>種類</h3>
+      <p>
+        産地や製法によって多彩な風味と香りが生まれます。紅茶の奥深い世界をご堪能ください。
+      </p>
+      <a href="types.html">詳しく見る</a>
+    </section>
 
+    <section>
+      <h3>楽しみ方</h3>
+      <p>
+        お気に入りの器とともに、心をほどく優雅なティータイムをお楽しみください。
+      </p>
+      <a href="enjoy.html">詳しく見る</a>
+    </section>
 
+    <section>
+      <h3>効果</h3>
+      <p>
+        紅茶には、心と身体の調子をやさしく整えてくれる効果があります。
+      </p>
+      <a href="effect.html">詳しく見る</a>
+    </section>
+
+    <section>
+      <h3>レシピ</h3>
+      <p>
+        シンプルながら無限のアレンジが楽しめる紅茶。フルーツやスパイス、ミルクなどを加えて楽しみましょう。
+      </p>
+      <a href="recipe.html">詳しく見る</a>
+    </section>
+  </main>
+  <script>
+    // メニューボタンの要素を取得
+    const menuButton = document.querySelector('.menu-button');
+    const submenu = document.querySelector('.submenu');
+  
+    // ボタンクリックでメニューの表示切り替え
+    menuButton.addEventListener('click', () => {
+      submenu.classList.toggle('active');
+    });
+  
+    // メニュー内のリンクをクリックしたらメニュー閉じる
+    submenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        submenu.classList.remove('active');
+      });
+    });
+  </script>
+  
+</body>
 </html>

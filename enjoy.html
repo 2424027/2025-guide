@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>初めての紅茶ガイド - 楽しみ方</title>
+  <link rel="stylesheet" href="enjoy.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="img/カップ２.png" alt="ロゴ" />
+    </a>
+
+    <div class="menu-button" id="menuToggle">
+      <img src="img/ボタン.png" alt="メニューボタン" />
+      <nav class="submenu" id="submenu">
+        <a href="history.html">歴史と文化</a>
+        <a href="choice.html">選び方</a>
+        <a href="types.html">種類</a>
+        <a href="enjoy.html">楽しみ方</a>
+        <a href="effect.html">効果</a>
+        <a href="recipe.html">レシピ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h3>楽しみ方</h3>
+      <p>
+        紅茶には、日常を少しだけ豊かにしてくれる力があります。 <br>
+        茶葉の香りを楽しみ、丁寧にお湯を注ぎ、お気に入りの器で味わうひととき——それは、ただ飲むだけではない、心を整える上質な時間です。
+        まず、紅茶ならではの「香り」に意識を向けてみましょう。<br>
+         茶葉を開けた瞬間に広がる芳香や、湯気にのって立ちのぼる繊細な香り。ダージリンの爽やかな果実香、アールグレイの華やかな柑橘香、アッサムの甘く力強い香りなど、紅茶は香りのバリエーションがとても豊かです。 <br>
+         そっと鼻を近づけ、香りを感じることで、その一杯により深く心が寄り添うようになります。
+        紅茶の味わいを左右するのは、やはり「淹れ方」。<br>
+         茶葉の種類に応じたお湯の温度や蒸らし時間を丁寧に選ぶことで、風味がぐっと引き立ちます。ティーポットを事前に温めておき、茶葉がゆっくりと開く様子を眺めながら時間をかけて抽出する。そうした過程そのものが、紅茶の楽しさの一部です。<br>
+        そして、ティータイムの「演出」も大切な要素。<br> お気に入りのティーカップ、ちょっとしたお菓子、静かな音楽や柔らかな光。それらがひとつになることで、何気ない午後が特別なひとときに変わります。自分のために用意する、ささやかな贅沢が、心に静かな満足をもたらしてくれるのです。<br>
+        紅茶は、味わう時間そのものがご褒美。 忙しい日々のなかで、心をほどくひとときを、ぜひ紅茶とともにお過ごしください。
+      </p>
+    </section>
+  </main>
+
+  <script>
+    // DOM読み込み後にイベント設定
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.getElementById('menuToggle');
+      const submenu = document.getElementById('submenu');
+
+      menuButton.addEventListener('click', () => {
+        submenu.classList.toggle('active');
+      });
+
+      submenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          submenu.classList.remove('active');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

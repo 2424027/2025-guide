@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>初めての紅茶ガイド - 楽しみ方</title>
+  <link rel="stylesheet" href="recipe.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="img/カップ２.png" alt="ロゴ" />
+    </a>
+
+    <div class="menu-button" id="menuToggle">
+      <img src="img/ボタン.png" alt="メニューボタン" />
+      <nav class="submenu" id="submenu">
+        <a href="history.html">歴史と文化</a>
+        <a href="choice.html">選び方</a>
+        <a href="types.html">種類</a>
+        <a href="enjoy.html">楽しみ方</a>
+        <a href="effect.html">効果</a>
+        <a href="recipe.html">レシピ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h3>レシピ</h3>
+        <p>紅茶は、日常のひとときを優雅に彩る飲み物として、古くから世界中で親しまれてまいりました。その魅力は、茶葉本来の香りや味わいを愉しむシンプルな一杯から、果実やスパイス、ミルクなどを添えることで生まれる多彩な表情にあります。ほんの少し手間をかけるだけで、いつものティータイムが格別なものへと変わるのです。<br>
+            基本の紅茶の淹れ方にも、ひとつの所作としての美しさがあります。沸騰したお湯を適温まで冷まし、選び抜かれた茶葉を丁寧に蒸らすことで、透明感のある香りと奥行きのある味わいが引き出されます。茶葉の種類や時間の流れに寄り添いながら、自分だけの「ちょうどよい一杯」を見つけていただければと思います。<br>
+            アレンジティーの世界は、まさに無限です。たとえば、ロイヤルミルクティーは、濃く煮出した茶葉にたっぷりのミルクを注ぐことで、まろやかで深みのある風味に仕上がります。甘味を加える際は、精製された砂糖だけでなく、はちみつや黒糖など、自然な甘さを取り入れることで味に奥行きが生まれます。<br>
+            また、柑橘やベリーを用いたフルーツティーは、季節感を演出する一杯としておすすめです。果実の香りがほんのり漂い、目にも美しい紅茶に。冷たく仕立てれば、夏の午後にふさわしい清涼感が広がります。<br>
+            寒い季節には、シナモンやカルダモン、生姜などのスパイスを用いたチャイティーも格別です。身体を芯から温めてくれるだけでなく、どこか異国の趣を感じさせる味わいは、日常に小さな旅のような喜びをもたらしてくれることでしょう。<br>
+            紅茶はただ喉を潤すものではなく、心を静かに整えるための一服であり、時間そのものを丁寧に過ごすための道具でもあります。忙しない日々のなかに、香りと温もりに包まれたひとときを。そんな願いを込めて、ここでは紅茶をさまざまに楽しむレシピをご紹介いたします。<br>
+            どうぞ、あなたにとって特別な一杯が見つかりますように。<br>
+        </p>
+     </section>
+    </main>
+
+  <script>
+    // DOM読み込み後にイベント設定
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.getElementById('menuToggle');
+      const submenu = document.getElementById('submenu');
+
+      menuButton.addEventListener('click', () => {
+        submenu.classList.toggle('active');
+      });
+
+      submenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          submenu.classList.remove('active');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

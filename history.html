@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>初めての紅茶ガイド - 歴史と文化</title>
+  <link rel="stylesheet" href="history.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="img/カップ２.png" alt="ロゴ" />
+    </a>
+
+    <div class="menu-button" id="menuToggle">
+      <img src="img/ボタン.png" alt="メニューボタン" />
+      <nav class="submenu" id="submenu">
+        <a href="history.html">歴史と文化</a>
+        <a href="choice.html">選び方</a>
+        <a href="types.html">種類</a>
+        <a href="enjoy.html">楽しみ方</a>
+        <a href="effect.html">効果</a>
+        <a href="recipe.html">レシピ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h3>紅茶と文化</h3>
+      <p>
+        紅茶の起源は古代中国にさかのぼります。はじめは薬として飲まれていた茶が、やがて「紅茶」として発展し、17世紀にはヨーロッパへと広まりました。特にイギリスでは貴族の間で大流行し、紅茶は社交の場や日常のリズムをつくる存在となりました。アフタヌーンティーやミルクティーといった飲み方が生まれ、現在でも「ティータイム」という文化として根付いています。
+      </p>
+      <p>
+        日本に紅茶が本格的に伝わったのは明治時代。もともとは輸出用として栽培されていましたが、次第に国内でも飲まれるようになり、今では「和紅茶」として日本独自の風味を持つ紅茶も親しまれています。
+      </p>
+      <p>
+        紅茶は、国ごとに飲み方や風習が異なり、食文化や生活習慣とも深く結びついています。ただの飲み物ではなく、人と人をつなぐ存在として、世界中で愛され続けているのです。
+      </p>
+    </section>
+  </main>
+
+  <script>
+    // DOM読み込み後にイベント設定
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.getElementById('menuToggle');
+      const submenu = document.getElementById('submenu');
+
+      menuButton.addEventListener('click', () => {
+        submenu.classList.toggle('active');
+      });
+
+      submenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          submenu.classList.remove('active');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
+

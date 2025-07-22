@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+body {
+  background-color: #BF9B58;
+  /* 背景画像はmainの疑似要素に移すため削除 */
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 700px auto;
+  background-attachment: fixed;
+}
+
+/* ヘッダー全体 */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* 他の要素より前面に */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+  }
+
+/* ロゴ画像 */
+.logo img {
+  width: 60px;
+  height: auto;
+}
+
+/* メニューボタンのコンテナ */
+.menu-button {
+  position: relative;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+/* メニューボタンの画像 */
+.menu-button img {
+  width: 80px;
+  height: auto;
+}
+
+/* サブメニュー（初期非表示） */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #F8E2B3;
+  border-radius: 8px;
+  padding: 10px 0;
+  box-shadow: 0 4px 8px rgba(176, 59, 59, 0.3);
+  min-width: 150px;
+  z-index: 1000;
+}
+
+/* 表示状態のメニュー */
+.submenu.active {
+  display: block;
+}
+
+/* サブメニュー内のリンク */
+.submenu a {
+  display: block;
+  color: #B03B3B;
+  text-decoration: none;
+  padding: 8px 20px;
+  font-weight: 600;
+  border-bottom: 1px solid #B03B3B;
+}
+
+.submenu a:last-child {
+  border-bottom: none;
+}
+
+.submenu a:hover {
+  background-color: #e7cf98;
+}
+
+/* メインのスタイル */
+main {
+  position: relative; /* 疑似要素の基準 */
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 16px;
+  z-index: 1;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    left: -400px;  /* 左端からの距離調整OK */
+    bottom: 0;
+    width: 800px;  /* 画像の幅 */
+    height: 800px; /* 画像の高さ */
+    background-image: url('img/パック.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 1;  /* 透け感調整 */
+    pointer-events: none;
+    z-index: -1;
+    transform: translateY(100px); /* 下に50px移動 */
+  }
+  
+
+/* セクション内 */
+section {
+  background-color: rgba(248, 226, 179, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  color: #B03B3B;
+  text-align: left;
+}
+
+/* セクションタイトル */
+section h3 {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  border-bottom: 2px solid #B03B3B;
+  padding-bottom: 10px;
+}
+
+/* セクション本文 */
+section p {
+  font-size: 14px;
+  line-height: 3.0;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* レスポンシブ調整 */
+@media (min-width: 768px) {
+  main {
+    font-size: 18px;
+  }
+
+  section h3 {
+    font-size: 28px;
+  }
+
+  section p {
+    font-size: 16px;
+  }
+}

@@ -1,1 +1,216 @@
 @charset "UTF-8";
+
+body {
+    background-color: #BF9B58; 
+  }
+/* ヘッダー全体 */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* 他の要素より前面に */
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+
+/* ロゴ画像 */
+.logo img {
+  width: 60px;
+  height: auto;
+}
+
+/* メニューボタンのコンテナ */
+.menu-button {
+  position: relative;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+/* メニューボタンの画像 */
+.menu-button img {
+  width: 80px;
+  height: auto;
+}
+
+/* サブメニュー（初期非表示） */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #F8E2B3;
+  border-radius: 8px;
+  padding: 10px 0;
+  box-shadow: 0 4px 8px rgba(176, 59, 59, 0.3);
+  min-width: 150px;
+  z-index: 1000;
+}
+
+/* 表示状態のメニュー */
+.submenu.active {
+  display: block;
+}
+
+/* サブメニュー内のリンク */
+.submenu a {
+  display: block;
+  color: #B03B3B;
+  text-decoration: none;
+  padding: 8px 20px;
+  font-weight: 600;
+  border-bottom: 1px solid #B03B3B;
+}
+
+.submenu a:last-child {
+  border-bottom: none;
+}
+
+.submenu a:hover {
+  background-color: #e7cf98;
+}
+
+/* メイン全体 */
+main {
+  color: #F8E2B3;
+  text-align: center;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.5;
+  padding: 20px;
+}
+
+/* main内のp */
+main p {
+  width: 264px;
+  color: #B03B3B;
+  text-align: center;
+  font-family: Inter, sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.5;
+  margin: 0 auto 30px;
+}
+
+/* 各section */
+section {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #F8E2B3;
+    min-height: 200px;
+  }
+  @media (min-width: 768px) {
+    section {
+      /* max-width: 700px; */
+      min-height: 280px;  /* ← PCではさらに大きく！ */
+    }
+  }
+
+/* section内のh3 */
+section h3 {
+  color: #B03B3B;
+  text-align: center;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.5;
+  margin: 0 auto 5px;
+}
+
+/* section内のp */
+section p {
+  color: #B03B3B;
+  text-align: center;
+  font-family: Inter, sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.5;
+  margin: 0 auto 10px;
+}
+
+/* section内のa */
+section a {
+  display: inline-block;
+  color: #B03B3B;
+  text-align: center;
+  font-family: Inter, sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.5;
+  text-decoration: none;
+  border-bottom: 1px solid #B03B3B;
+  padding: 2px 6px;
+}
+
+/* イントロのボックス */
+.intro-box {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  padding: 20px;
+  background-color: #F8E2B3;
+  border-radius: 10px;
+  text-align: center;
+  color: #B03B3B;
+  font-size: 14px;
+  line-height: 2;
+  overflow: hidden;
+}
+
+/* 重ねる画像のスタイル */
+.overlay-cup {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 120px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* レスポンシブ対応 */
+@media (min-width: 768px) {
+  main {
+    font-size: 24px;
+  }
+
+  main p {
+    width: 400px;
+    font-size: 14px;
+  }
+
+  section {
+    /* width: 500px; */
+  }
+
+  section h3 {
+    font-size: 28px;
+  }
+
+  section p,
+  section a {
+    font-size: 14px;
+  }
+
+  .intro-box {
+    max-width: 700px;
+    font-size: 16px;
+  }
+
+  .overlay-cup {
+    width: 150px;
+    bottom: -20px;
+    right: -20px;
+  }
+}
