@@ -24,6 +24,7 @@
       </nav>
     </div>
   </header>
+
   <main>
     <div class="intro-box">
       初めて紅茶に触れる方へ——<br />
@@ -38,69 +39,74 @@
 
     <section>
       <h3>歴史と文化</h3>
-      <p>
-        紅茶は、古代から現代まで世界中で愛されてきた飲み物。文化や歴史を紐解けば、一杯の中に広がる深い物語が見えてきます。
-      </p>
+      <p>紅茶は、古代から現代まで世界中で愛されてきた飲み物。文化や歴史を紐解けば、一杯の中に広がる深い物語が見えてきます。</p>
       <a href="history.html">詳しく見る</a>
     </section>
 
     <section>
       <h3>選び方</h3>
-      <p>
-        香りや味わい、気分や食卓に寄り添う紅茶選びを。心満たされる一杯との出会いを、ぜひお楽しみください。
-      </p>
+      <p>香りや味わい、気分や食卓に寄り添う紅茶選びを。心満たされる一杯との出会いを、ぜひお楽しみください。</p>
       <a href="choice.html">詳しく見る</a>
     </section>
 
     <section>
       <h3>種類</h3>
-      <p>
-        産地や製法によって多彩な風味と香りが生まれます。紅茶の奥深い世界をご堪能ください。
-      </p>
+      <p>産地や製法によって多彩な風味と香りが生まれます。紅茶の奥深い世界をご堪能ください。</p>
       <a href="types.html">詳しく見る</a>
     </section>
 
     <section>
       <h3>楽しみ方</h3>
-      <p>
-        お気に入りの器とともに、心をほどく優雅なティータイムをお楽しみください。
-      </p>
+      <p>お気に入りの器とともに、心をほどく優雅なティータイムをお楽しみください。</p>
       <a href="enjoy.html">詳しく見る</a>
     </section>
 
     <section>
       <h3>効果</h3>
-      <p>
-        紅茶には、心と身体の調子をやさしく整えてくれる効果があります。
-      </p>
+      <p>紅茶には、心と身体の調子をやさしく整えてくれる効果があります。</p>
       <a href="effect.html">詳しく見る</a>
     </section>
 
     <section>
       <h3>レシピ</h3>
-      <p>
-        シンプルながら無限のアレンジが楽しめる紅茶。フルーツやスパイス、ミルクなどを加えて楽しみましょう。
-      </p>
+      <p>シンプルながら無限のアレンジが楽しめる紅茶。フルーツやスパイス、ミルクなどを加えて楽しみましょう。</p>
       <a href="recipe.html">詳しく見る</a>
     </section>
   </main>
+
   <script>
-    // メニューボタンの要素を取得
+    // メニュー表示切り替え
     const menuButton = document.querySelector('.menu-button');
     const submenu = document.querySelector('.submenu');
-  
-    // ボタンクリックでメニューの表示切り替え
+
     menuButton.addEventListener('click', () => {
       submenu.classList.toggle('active');
+      menuButton.classList.toggle('active'); // 回転用
     });
-  
-    // メニュー内のリンクをクリックしたらメニュー閉じる
+
     submenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         submenu.classList.remove('active');
+        menuButton.classList.remove('active');
       });
     });
+
+    // セクションのアニメーション表示
+    const sections = document.querySelectorAll("section");
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
   </script>
-  
 </body>
 </html>

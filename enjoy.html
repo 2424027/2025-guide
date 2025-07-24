@@ -27,9 +27,9 @@
   </header>
 
   <main>
-    <section>
+    <section class="fade-section">
       <h3>楽しみ方</h3>
-      <p>
+      <p class="fade-text">
         紅茶には、日常を少しだけ豊かにしてくれる力があります。 <br>
         茶葉の香りを楽しみ、丁寧にお湯を注ぎ、お気に入りの器で味わうひととき——それは、ただ飲むだけではない、心を整える上質な時間です。
         まず、紅茶ならではの「香り」に意識を向けてみましょう。<br>
@@ -44,20 +44,37 @@
   </main>
 
   <script>
-    // DOM読み込み後にイベント設定
     document.addEventListener('DOMContentLoaded', () => {
       const menuButton = document.getElementById('menuToggle');
       const submenu = document.getElementById('submenu');
 
       menuButton.addEventListener('click', () => {
         submenu.classList.toggle('active');
+        menuButton.classList.toggle('active');  // 回転用クラス追加
       });
 
       submenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           submenu.classList.remove('active');
+          menuButton.classList.remove('active');
         });
       });
+
+      // フェードイン対象の要素
+      const fadeElements = document.querySelectorAll('.fade-section, .fade-text');
+
+      const revealOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.9;
+        fadeElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < triggerBottom) {
+            el.classList.add('visible');
+          }
+        });
+      };
+
+      window.addEventListener('scroll', revealOnScroll);
+      window.addEventListener('load', revealOnScroll);
     });
   </script>
 

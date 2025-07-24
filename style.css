@@ -1,41 +1,44 @@
 @charset "UTF-8";
 
 body {
-    background-color: #BF9B58; 
-  }
-/* ヘッダー全体 */
+  background-color: #BF9B58; 
+}
+
+/* ヘッダー */
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100; /* 他の要素より前面に */
+  z-index: 100;
   padding: 10px 20px;
   display: flex;
   align-items: center;
 }
 
-
-/* ロゴ画像 */
+/* ロゴ */
 .logo img {
   width: 60px;
   height: auto;
 }
 
-/* メニューボタンのコンテナ */
+/* メニュー */
 .menu-button {
   position: relative;
   margin-left: auto;
   cursor: pointer;
 }
 
-/* メニューボタンの画像 */
 .menu-button img {
   width: 80px;
   height: auto;
+  transition: transform 0.4s ease;
 }
 
-/* サブメニュー（初期非表示） */
+.menu-button.active img {
+  transform: rotate(90deg);
+}
+
 .submenu {
   display: none;
   position: absolute;
@@ -49,12 +52,10 @@ header {
   z-index: 1000;
 }
 
-/* 表示状態のメニュー */
 .submenu.active {
   display: block;
 }
 
-/* サブメニュー内のリンク */
 .submenu a {
   display: block;
   color: #B03B3B;
@@ -72,7 +73,7 @@ header {
   background-color: #e7cf98;
 }
 
-/* メイン全体 */
+/* メイン */
 main {
   color: #F8E2B3;
   text-align: center;
@@ -82,78 +83,67 @@ main {
   font-weight: 400;
   line-height: 2.5;
   padding: 20px;
+  padding-top: 100px;
 }
 
-/* main内のp */
-main p {
-  width: 264px;
-  color: #B03B3B;
-  text-align: center;
-  font-family: Inter, sans-serif;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 2.5;
-  margin: 0 auto 30px;
-}
-
-/* 各section */
+/* 各セクション */
 section {
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto 20px;
-    padding: 20px;
-    border-radius: 10px;
-    background: #F8E2B3;
-    min-height: 200px;
-  }
-  @media (min-width: 768px) {
-    section {
-      /* max-width: 700px; */
-      min-height: 280px;  /* ← PCではさらに大きく！ */
-    }
-  }
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #F8E2B3;
+  min-height: 200px;
 
-/* section内のh3 */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* セクション内のテキスト */
 section h3 {
   color: #B03B3B;
   text-align: center;
   font-family: "Zen Kaku Gothic Antique", sans-serif;
   font-size: 24px;
-  font-style: normal;
   font-weight: 400;
-  line-height: 2.5;
   margin: 0 auto 5px;
 }
 
-/* section内のp */
 section p {
   color: #B03B3B;
   text-align: center;
   font-family: Inter, sans-serif;
   font-size: 10px;
-  font-style: normal;
   font-weight: 400;
-  line-height: 2.5;
   margin: 0 auto 10px;
+  line-height: 2.5;
 }
 
-/* section内のa */
 section a {
   display: inline-block;
   color: #B03B3B;
-  text-align: center;
   font-family: Inter, sans-serif;
   font-size: 10px;
-  font-style: normal;
   font-weight: 400;
-  line-height: 2.5;
   text-decoration: none;
   border-bottom: 1px solid #B03B3B;
   padding: 2px 6px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* イントロのボックス */
+section a:hover {
+  transform: scale(1.05);
+  color: #8c2a2a;
+}
+
+/* イントロ */
 .intro-box {
   position: relative;
   max-width: 600px;
@@ -168,7 +158,6 @@ section a {
   overflow: hidden;
 }
 
-/* 重ねる画像のスタイル */
 .overlay-cup {
   position: absolute;
   bottom: -10px;
@@ -177,9 +166,19 @@ section a {
   height: auto;
   z-index: 1;
   pointer-events: none;
+  animation: floatCup 4s ease-in-out infinite;
 }
 
-/* レスポンシブ対応 */
+@keyframes floatCup {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* レスポンシブ */
 @media (min-width: 768px) {
   main {
     font-size: 24px;
@@ -188,10 +187,6 @@ section a {
   main p {
     width: 400px;
     font-size: 14px;
-  }
-
-  section {
-    /* width: 500px; */
   }
 
   section h3 {

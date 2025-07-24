@@ -27,38 +27,54 @@
   </header>
 
   <main>
-    <section>
+    <section class="fade-section">
       <h3>紅茶と文化</h3>
-      <p>
+      <p class="fade-text">
         紅茶の起源は古代中国にさかのぼります。はじめは薬として飲まれていた茶が、やがて「紅茶」として発展し、17世紀にはヨーロッパへと広まりました。特にイギリスでは貴族の間で大流行し、紅茶は社交の場や日常のリズムをつくる存在となりました。アフタヌーンティーやミルクティーといった飲み方が生まれ、現在でも「ティータイム」という文化として根付いています。
       </p>
-      <p>
+      <p class="fade-text">
         日本に紅茶が本格的に伝わったのは明治時代。もともとは輸出用として栽培されていましたが、次第に国内でも飲まれるようになり、今では「和紅茶」として日本独自の風味を持つ紅茶も親しまれています。
       </p>
-      <p>
+      <p class="fade-text">
         紅茶は、国ごとに飲み方や風習が異なり、食文化や生活習慣とも深く結びついています。ただの飲み物ではなく、人と人をつなぐ存在として、世界中で愛され続けているのです。
       </p>
     </section>
   </main>
 
   <script>
-    // DOM読み込み後にイベント設定
     document.addEventListener('DOMContentLoaded', () => {
       const menuButton = document.getElementById('menuToggle');
       const submenu = document.getElementById('submenu');
 
       menuButton.addEventListener('click', () => {
         submenu.classList.toggle('active');
+        menuButton.classList.toggle('active'); // 回転用
       });
 
       submenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           submenu.classList.remove('active');
+          menuButton.classList.remove('active');
         });
       });
+
+      // スクロールでフェードイン
+      const fadeElements = document.querySelectorAll('.fade-text, .fade-section');
+
+      const revealOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.9;
+        fadeElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < triggerBottom) {
+            el.classList.add('visible');
+          }
+        });
+      };
+
+      window.addEventListener('scroll', revealOnScroll);
+      window.addEventListener('load', revealOnScroll);
     });
   </script>
 
 </body>
 </html>
-

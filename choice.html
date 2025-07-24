@@ -27,58 +27,73 @@
   </header>
 
   <main>
-    <section>
+    <section class="fade-section">
       <h3>選び方</h3>
-      <p>
+      <p class="fade-text">
         紅茶は、香りや味わいだけでなく、気分やライフスタイルに寄り添って選ぶことで、より豊かな時間を演出してくれます。こちらでは、紅茶の選び方を4つの観点から丁寧にご紹介いたします。
       </p>
     </section>
   
-    <section>
+    <section class="fade-section">
       <h3>気分</h3>
-      <p>
+      <p class="fade-text">
         まず、「気分で選ぶ紅茶」では、一日の始まりやお休み前など、シーンに応じた茶葉の選び方をご提案いたします。たとえば、リラックスしたい夜にはカモミールティーを、集中力を高めたい時にはアールグレイなど、目的に合わせた一杯をお選びいただけます。
       </p>
     </section>
   
-    <section>
+    <section class="fade-section">
       <h3>食事</h3>
-      <p>
+      <p class="fade-text">
         次に、「食事に合う紅茶」では、お料理との相性に注目いたします。軽やかな香りのダージリンはサンドイッチやスコーンと、香り高いアールグレイはスイーツとの相性が良く、日々の食卓に紅茶を添えることで、味わいが一層引き立ちます。
       </p>
     </section>
   
-    <section>
+    <section class="fade-section">
       <h3>カフェイン</h3>
-      <p>
+      <p class="fade-text">
         「カフェイン量で選ぶ紅茶」では、健康や体調に配慮した紅茶選びをご紹介いたします。朝にはしっかり目覚めを助けるアッサムを、夜にはカフェイン控えめのデカフェやハーブティーを選ぶことで、心と体にやさしいティータイムをお楽しみいただけます。
       </p>
     </section>
   
-    <section>
+    <section class="fade-section">
       <h3>香り</h3>
-      <p>
+      <p class="fade-text">
         最後に、「香りで選ぶ紅茶」では、ベルガモットの爽やかさ、花の香り、フルーツの甘みなど、多彩な香りの世界をご堪能いただけます。お気に入りの香りに包まれることで、ひとときの癒やしを感じていただけることでしょう。その日の気分やお好みに合わせて、紅茶選びの時間そのものを、どうぞお楽しみくださいませ。
       </p>
     </section>
   </main>
-  
 
   <script>
-    // DOM読み込み後にイベント設定
     document.addEventListener('DOMContentLoaded', () => {
       const menuButton = document.getElementById('menuToggle');
       const submenu = document.getElementById('submenu');
 
       menuButton.addEventListener('click', () => {
         submenu.classList.toggle('active');
+        menuButton.classList.toggle('active');
       });
 
       submenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           submenu.classList.remove('active');
+          menuButton.classList.remove('active');
         });
       });
+
+      const fadeElements = document.querySelectorAll('.fade-text, .fade-section');
+
+      const revealOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.9;
+        fadeElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < triggerBottom) {
+            el.classList.add('visible');
+          }
+        });
+      };
+
+      window.addEventListener('scroll', revealOnScroll);
+      window.addEventListener('load', revealOnScroll);
     });
   </script>
 
