@@ -96,7 +96,7 @@ main::before {
   bottom: 0;
   width: 800px;  /* 画像の幅 */
   height: 800px; /* 画像の高さ */
-  background-image: url('img/カップとポット.png');
+  background-image: url('img/3.png');
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 1;  /* 透け感調整 */
